@@ -136,16 +136,16 @@ from django.contrib import admin
 from models import Bookinfo
 
 class BookInfoInAdmin(admin.TabularInline):#或者admin.StackedInline
-    #后台关联
-    model = Heroinfo
-    extra = 3 
+	#后台关联
+    	model = Heroinfo
+   	extra = 3 
 
 class BookInfoAdmin(admin.ModelAdmin):
-    list_display = ['id','btitle','bpub_date']#列表分列
-    list_filter = ['btitle']#过滤器
-    search_fields = ['btitle']#搜索
-    list_per_page = 1 #分页
-    inlines = [BookInfoInAdmin]#内关联
+	list_display = ['id','btitle','bpub_date']#列表分列
+    	list_filter = ['btitle']#过滤器
+    	search_fields = ['btitle']#搜索
+    	list_per_page = 1 #分页
+    	inlines = [BookInfoInAdmin]#内关联
 admin.site.register(Bookinfo，BookInfoAdmin)
 
 
@@ -154,10 +154,10 @@ from django.shortcuts import render
 from django.template import RequestContext,loader        ***********
 from django.http import HttpResponse                     ***********
 def index(request): 
-    #加载文件
-    temp =loader.get_template('app/index.html')     #index.html在templates文件中
+    	#加载文件
+    	temp =loader.get_template('app/index.html')     #index.html在templates文件中
 
-    return HttpResponse(temp.render())#渲染
+    	return HttpResponse(temp.render())#渲染
 
 
 #编辑urls.py
@@ -167,7 +167,7 @@ from django.urls import path
 from app import views           ********
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('firstpage',views.firstPage),
-    path('index',views.index)
+    	path('admin/', admin.site.urls),
+    	path('firstpage',views.firstPage),
+    	path('index',views.index)
                             ]
