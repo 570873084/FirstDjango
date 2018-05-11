@@ -1,4 +1,4 @@
-# FirstDjango
+﻿# FirstDjango
 Django web
 django
 
@@ -83,8 +83,8 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 # 配置templates路径
-TEMPLATES = [
-    {
+	TEMPLATES = [
+    	{
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
@@ -95,79 +95,79 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-# 配置static路径
-STATIC_URL = '/static/'
-STATICFILES_DIRS=(
-    # 告诉django static的路径
-    os.path.join(BASE_DIR,"static"),
+           	 ],
+        	},
+    	},
+	]
+	# 配置static路径
+	STATIC_URL = '/static/'
+	STATICFILES_DIRS=(
+    	# 告诉django static的路径
+    		os.path.join(BASE_DIR,"static"),
 
 )
 
-# 运行项目
-python manage.py runserver  127.0.0.1:8080
+	# 运行项目
+	python manage.py runserver  127.0.0.1:8080
 
-# 同步数据库,假如修改model.py，增加方法def的话，不需要迁移
-#生成迁移
-python manage.py makemigrations
-#执行迁移
-python manage.py migrate
+	# 同步数据库,假如修改model.py，增加方法def的话，不需要迁移
+	#生成迁移
+	python manage.py makemigrations
+	#执行迁移
+	python manage.py migrate
 
 
-#输入到数据库
-python manage.py shell            
+	#输入到数据库
+	python manage.py shell            
 
-from app.models import *
+	from app.models import *
 
-b =Bookinfo()
-b.btitle ='abc'
-b.save()
+	b =Bookinfo()
+	b.btitle ='abc'
+	b.save()
 
 #创建超级管理员账户，后台管理，增删改查数据 localhost/admin
 
-python manage.py createsuperuser 
+	python manage.py createsuperuser 
 
 #向admin后台管理中注册模型，打开admin.py
 
-from django.contrib import admin
-from models import Bookinfo
+	from django.contrib import admin
+	from models import Bookinfo
 
-class BookInfoInAdmin(admin.TabularInline):#或者admin.StackedInline
+	class BookInfoInAdmin(admin.TabularInline):                #或者admin.StackedInline
 	#后台关联
-    	model = Heroinfo
-   	extra = 3 
+    		model = Heroinfo
+   		extra = 3 
 
-class BookInfoAdmin(admin.ModelAdmin):
-	list_display = ['id','btitle','bpub_date']#列表分列
-    	list_filter = ['btitle']#过滤器
-    	search_fields = ['btitle']#搜索
-    	list_per_page = 1 #分页
-    	inlines = [BookInfoInAdmin]#内关联
-admin.site.register(Bookinfo，BookInfoAdmin)
+	class BookInfoAdmin(admin.ModelAdmin):
+		list_display = ['id','btitle','bpub_date']#列表分列
+    		list_filter = ['btitle']#过滤器
+    		search_fields = ['btitle']#搜索
+    		list_per_page = 1 #分页
+    		inlines = [BookInfoInAdmin]#内关联
+	admin.site.register(Bookinfo，BookInfoAdmin)
 
 
 #视图编辑views.py 
-from django.shortcuts import render
-from django.template import RequestContext,loader        ***********
-from django.http import HttpResponse                     ***********
-def index(request): 
+	from django.shortcuts import render
+	from django.template import RequestContext,loader        ***********
+	from django.http import HttpResponse                     ***********
+	def index(request): 
     	#加载文件
-    	temp =loader.get_template('app/index.html')     #index.html在templates文件中
+    		temp =loader.get_template('app/index.html')     #index.html在templates文件中
 
-    	return HttpResponse(temp.render())#渲染
+    		return HttpResponse(temp.render())#渲染
 
 
 #编辑urls.py
 
-from django.contrib import admin
-from django.urls import path
-from app import views           ********
+	from django.contrib import admin
+	from django.urls import path
+	from app import views           ********
 
-urlpatterns = [
-    	path('admin/', admin.site.urls),
-    	path('firstpage',views.firstPage),
-    	path('index',views.index)
+	urlpatterns = [
+    		path('admin/', admin.site.urls),
+    		path('firstpage',views.firstPage),
+    		path('index',views.index)
                             ]
