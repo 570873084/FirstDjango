@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oNum1=document.getElementById('num1');
+            var oNum2=document.getElementById('num2')
+            var oOpt = document.getElementById('opt');
+            var oCal = document.getElementById('cal');
+            oCal.onclick=function () {
+                var Num1=oNum1.value;
+                var Num2=oNum2.value;
+                var Opt=oOpt.value;
+                
+                switch (Opt){
+                    case '0':
+                        var oSum=parseInt(Num1)+parseInt(Num2);
+                        alert(oSum);
+                        break;
+                    case '1':
+                        var odum=parseInt(Num1)-parseInt(Num2);
+                        alert(odum);
+                        break;
+                    case '2':
+                        var oaum=parseInt(Num1)*parseInt(Num2);
+                        alert(oaum);
+                        break;
+                    case '3':
+                        var oqum=parseInt(Num1)/parseInt(Num2);
+                        alert(oqum);
+                        break;
+
+
+                }
+                // if(Opt=='0'){
+                //     var oSum=parseInt(Num1)+parseInt(Num2);
+                //     alert(oSum);
+                // };
+                // if(Opt=='1'){
+                //     var odum=parseInt(Num1)-parseInt(Num2);
+                //     alert(odum);
+                // };
+                // if(Opt=='2'){
+                //     var oaum=parseInt(Num1)*parseInt(Num2);
+                //     alert(oaum);
+                // };
+                // if(Opt=='3'){
+                //     var oqum=parseInt(Num1)/parseInt(Num2);
+                //     alert(oqum);
+                // };
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+    <input id="num1" type="text" name="">
+    <select id="opt">
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">*</option>
+        <option value="3">/</option>
+    </select>
+    <input id="num2" type="text" name="">
+    <input id="cal" type="button" name="" value="计算">
+</body>
+</html>

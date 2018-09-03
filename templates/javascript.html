@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <link type="text/css" href="1.css" rel="stylesheet" id="css">
+    <script>
+        window.onload=function(){
+        var oBox = document.getElementById('box1');
+        var oDiv2 = document.getElementById('div2');
+        var btn = document.getElementById('btn');
+        var d =document.getElementById('div1');
+        var oInput1 =document.getElementById('input1');
+        var oInput2 =document.getElementById('input2');
+        var oInput3 =document.getElementById('input3');
+        btn.onclick=function () {
+            if(oDiv2.style.display=='none'){
+                oDiv2.style.display='block';
+            }
+            else{
+                oDiv2.style.display='none';
+            }
+
+
+        }
+
+
+
+
+
+
+
+        input3.onclick=function(){
+            var oA =sum(oInput1.value,oInput2.value);
+            alert('计算结果为：'+oA);
+        }
+        function sum(a,b){
+            var c = parseInt(a)+parseInt(b);
+
+            return c;
+        }
+        // input1.value='10';
+        // input2.value= '5';
+        d.onclick =function () {alert('hello')
+
+        };
+        oBox.onclick = cssb;
+        // window.onload=function(){
+        //
+        // var a = document.getElementById('box1');
+        //var b =document.getElementById('box2');
+        //     a.onclick=cssa;
+        // b.onclick=cssb};
+        function cssa() {
+            var c = document.getElementById('css');
+            c.href='1.css';
+        }
+        function cssb() {
+            var c = document.getElementById('css');
+            c.href='2.css';
+
+        }}
+    </script>
+    <style type="text/css">
+        #div2{
+            width: 88px;
+            height: 150px;
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">这是一个div元素</div>
+
+<input type="button" value="按钮1" id="box1">
+<input type="button" value="按钮2" id="box2">
+
+<input type="button" value="切换" id="btn">
+    <div  id="div2" >
+    </div>
+
+    <div class="boxb"
+        <input type="text" name="" value="" id="input1">
+        <input type="text" name="" value="" id="input2">
+        <input type="button" name="" value="相加" id="input3">
+    </div>
+</body>
+</html>

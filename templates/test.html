@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个网页</title>
+    <!--外链式-->
+    <script type="text/javascript" src="js地址"></script>
+    <!--嵌入式-->
+    <script type="text/javascript">
+        window.onload = function(){document.getElementById('box').title='nihao'}
+    </script>
+
+
+    <style type="text/css">
+        label{color: darkred;}
+        #lab1{color: blue;}
+
+        .box{width: 200px;
+        height: 100px;
+        background-color: darkred;
+        border: 20px solid #5038ff;
+        padding: 20px }
+
+        .box:hover{background-color: aquamarine}
+
+        /*border-top: 10px solid #5038ff;*/
+        /*border-left: 10px solid #5038ff;*/
+        /*border-right: 10px solid #5038ff;*/
+        /*border-bottom: 10px solid #5038ff;*/
+
+        /*border-top-width: 20px;*/
+        /*border-top-color: ;*/
+        /*border-top-style: solid;}*/
+        .box1{width: 400px;
+            height: 35px;
+            background-color: antiquewhite;
+            margin: auto;
+            border-top:#f00 solid 1px ;
+            border-bottom: 3px solid #666;
+            font-size: 20px;
+            font-family: "Microsoft Himalaya";
+            color: #333;
+        }
+        .box1{padding-left:15px;
+        padding-top:15px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<!--第一种js嵌入方式行间事件，不推荐-->
+<input type="button" name="" value="弹框" onclick="alert('hello')">
+<ul>
+    <!--#表示锚点 JavaScript：表示没有动作-->
+    <li><a href="javascript:;">1 &</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+</ul>
+
+<h2>css盒子模型</h2>
+<div id="box"  class="box" title="盒子">
+盒子里面的文字fdasfdsf adfdfdsfsdf
+
+</div>
+<!--<script type="text/javascript">-->
+        <!--// alert('hello,world');-->
+        <!--document.getElementById('box').title='wokandao';-->
+    <!--</script>-->
+
+<h4>新闻列表</h4>
+<div class="box1">
+新闻列表
+
+</div>
+
+<table border="1" width="500"  height="300">
+    <tr>
+        <th>name</th>
+        <th>date</th>
+        <th>age</th>
+    </tr>
+    <tr>
+        <td align="center">jack</td>
+        <td>2017-6-1</td>
+        <td>20</td>
+    </tr>
+
+
+
+</table>
+<h3>用户注册</h3>
+    <form action="http://www.baidu.com">
+        <div>
+            <label id="lab1" for="username">用户名：</label>
+            <input type="text" name="" id="username">
+        </div>
+        <br>
+        <div>
+            <label>密 码 ：</label>
+            <input type="password" name="">
+        </div>
+        <br>
+        <div>
+            <label>性别</label>
+            <input type="radio" name="gender"id="male"><label for="male">男</label>
+            <input type="radio" name="gender">女
+        </div>
+        <div>
+            <label>照片</label>
+            <input type="file" name="">
+        </div>
+        <br>
+        <div>
+            <label>爱好</label>
+            <input type="checkbox" name="gender">游戏
+            <input type="checkbox" name="gender">逛街
+            <input type="checkbox" name="gender">电影
+            <input type="checkbox" name="gender">音乐
+        </div>
+         <br>
+        <div>
+            <label>籍贯</label>
+            <select>
+                <option>浙江</option>
+                <option>上海</option>
+                <option>北京</option>
+                <option>广东</option>
+                <option>厦门</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="submit" name="" value="提交" >
+            <input type="reset" name="" value="重置">
+        </div>
+
+    </form>
+<a href="http://www.baidu.com" title="跳转到百度"> <img src="01.jpg" alt="柯南"></a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vip视频解析</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+                var oUrl1 = $('#url1').val();
+                var oUrl2 =$('.form-search');
+                switch (oUrl1){
+                    case '0':
+                        oUrl2.attr('action',"https://660e.com/?url=");
+                        break;
+                    case '1':
+                        oUrl2.action = "http://jx.hxbte.cn/jx.php/?url=";
+                        break;
+
+                }
+
+
+
+        })
+    </script>
+
+</head>
+<body>
+    <div class="box1">
+        <lable>接口</lable>
+        <select name="" id="url1">
+            <option value="0">接口1</option>
+            <option value="1">接口2</option>
+            <option value="2">接口3</option>
+            <option value="3">接口4</option>
+            <option value="4">接口5</option>
+            <option value="5">接口6</option>
+            <option value="6">接口7</option>
+            <option value="7">接口8</option>
+
+
+        </select>
+        <form class="form-search cf" action="" method="get">
+            <input name="url" id="url" type="text" class="text" placeholder="请输入播放地址">
+            <input type="submit" id="post" class="button" value="立即播放">
+        </form>
+    </div>
+</body>
+</html>

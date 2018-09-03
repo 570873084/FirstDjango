@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script type="text/javascript"src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $('#div1').animate({width:400,height:400},1000,function () {
+                 $(this).animate({marginRight:0},1000);
+
+
+
+
+            });
+            $('.list li').each(function(index){
+                $(this).html(index);
+            });
+
+
+        })
+
+
+
+    </script>
+    <style type="text/css">
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: darkred;
+            margin-left:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">盒子</div>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</body>
+</html>

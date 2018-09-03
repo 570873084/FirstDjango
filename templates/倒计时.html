@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <script>
+        window.onload = function () {
+
+
+            timer();
+            var sec = new timer2();
+            setInterval(timer,1000);
+            var oTime =setInterval(timer2,1000);
+
+
+
+
+
+
+            function timer2() {
+                var oDiv2 = document.getElementById('div2')
+                var now =new Date()
+                var futurenum ='7 20,2018 14:33:00'
+                var future = new Date(futurenum);
+                var lefts = parseInt((future-now)/1000);
+                var oDay = parseInt((lefts/86400));
+                var oHour = parseInt((lefts%86400)/3600);
+                var oMin = parseInt(((lefts%86400)%3600)/60);
+                var oSec = lefts%60;
+                oDiv2.innerHTML =('距离'+futuretime(futurenum)+'还有'+oDay+'天'+oHour+'小时'+oMin+'分钟'+oSec+'秒');
+                if(oSec<= 0){
+                    window.location.href ='http://www.baidu.com'
+                }
+
+            }
+            function futuretime(future) {
+                var time = new Date(future);
+                var year = time.getFullYear();
+                var month = time.getMonth();
+                var day = time.getDate();
+                var hour = time.getHours();
+                var minute = time.getMinutes();
+                var second = time.getSeconds();
+                return  year +'-' + (month+1) + '-' + day + ' '+ hour + ':' +seconds(minute) +':'+seconds(second)
+            }
+            function timer() {
+                var oDiv1 = document.getElementById("div1");
+                var time = new Date();
+                var year = time.getFullYear();
+                var month = time.getMonth();
+                var day = time.getDate();
+                var hour = time.getHours();
+                var minute = time.getMinutes();
+                var second = time.getSeconds();
+
+                oDiv1.innerHTML ='现在时间为：'+ year +'-' + (month+1) + '-' + day + ' '+ hour + ':' +seconds(minute) +':'+seconds(second);
+
+            }
+
+            function seconds(num) {
+                if(num<10){
+                    var sencond = '0'+num;
+                    return sencond;
+            }
+                else{
+                    return num;
+            }
+
+        }
+                }
+
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
