@@ -7,6 +7,10 @@
 <body>
     <div>
         <ui>
+{#            {{ t1|safe }}html转义#}
+{#            {{ t1|default:'<h1>123<h1>' }}#}
+{#            {% url 'apps:index' 参数 %}模板继承#}
+
             {% for h in hero %}
             <li>{{ h.hname }}</li>
             {% endfor %}

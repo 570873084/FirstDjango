@@ -89,6 +89,13 @@
 </head>
 <body>
     <div>
+        <form action="csrf1" method="post"></form>
+{#        csrf保护，防止其他网站数据post到csrf1中,只限post请求#}
+        {% csrf_token %}
+        <input type="text" name="uname">
+        <input type="submit" value="提交">
+    </div>
+    <div>
         <ul>
             {% for book in list %}
             <li class="left"><a href="{{ book.id }}">{{ book.btitle  }}</a></li>

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,re_path
+from django.urls import path,re_path,include
 from apps import views
 
 
@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('first',views.first),
     path('jquery-1.12.4.js',views.jquery),
-    re_path(r'^(\d+)$',views.hero)
+    re_path('^(<id>\d+)$',views.hero),#<关键字名>关键字参数用法，没有则使用位置参数匹配
+    path('apps/',include('apps.urls',namespace='apps'))#namespace在include中，name在path中，用于反向解析
 
 ]
