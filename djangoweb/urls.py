@@ -23,6 +23,7 @@ urlpatterns = [
     path('first',views.first),
     path('jquery-1.12.4.js',views.jquery),
     re_path('^(<id>\d+)$',views.hero),#<关键字名>关键字参数用法，没有则使用位置参数匹配
-    path('apps/',include('apps.urls',namespace='apps'))#namespace在include中，name在path中，用于反向解析
+    path('apps/',include('apps.urls',namespace='apps')),#namespace在include中，name在path中，用于反向解析
+    path('verifyCode/',views.verifyCode)
 
 ]
