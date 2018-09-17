@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from apps.models import *
+from PIL import ImageDraw,ImageFont,Image
+import random
+
 from django.db.models import Max
 
 
@@ -55,5 +58,29 @@ def session(request):
 def htmlTest(request):
     context = {'t1':'<h1>123<h1>'}
     return render(request,'hero.html',context)
+
+#验证码
+def verifyCode(requset):
+    #创建背景色
+
+    bgcolor = (random.randrange(50,100),random.randrange(50,150),255)
+    #设置宽高
+    width = 100
+    height = 35
+    #创建画布
+    image = Image.new('RGB',(width,height),bgcolor)
+    #创建画笔
+    draw = ImageDraw.Draw(image)
+    #创建字体样式
+    font = ImageFont.truetype(font=r'D:\Users\Administrator\PycharmProjects\djangoweb\venv\cambriab.ttf',size=25)
+    #创建字体
+    text = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789'
+    #random.choices是从text里随机选择4个值，取出的值为列表，再转化为str类型
+    draw.text((20,0),''.join(random.choices(text,k=4)),(255,255,255),font=font)
+    #保存到内存流
+    from io import BytesIO
+    buf = BytesIO() #图片用bytes，不能用stringio
+    image.save(buf,'png')
+    return HttpResponse(buf.getvalue(),'image/png')
 
 
